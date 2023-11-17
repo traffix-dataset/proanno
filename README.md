@@ -6,7 +6,6 @@
 [![dataset](https://img.shields.io/badge/Traffix%20Dataset%200.9-Download-100000?style=flat)](https://syncandshare.lrz.de/getlink/fiXdMni7DP5bqSsYgSpeLc/traffix-0.9)
 [![dataset2](https://img.shields.io/badge/Traffix%20Dataset%201.0-Download-100000?style=flat)](https://syncandshare.lrz.de/getlink/fi4gZzFh8BUn6Sw4ZC8u49/traffix-1.0)
 
-[![website](https://img.shields.io/badge/Website-Explore%20Now-blueviolet?style=flat&logo=google-chrome)](https://traffix-dataset.github.io/)
 <!-- [![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)]() -->
 <!-- [![supplement](https://img.shields.io/badge/Supplementary-Material-red)]() -->
 <!-- [![video](https://img.shields.io/badge/Video-Presentation-F9D371)]() -->
