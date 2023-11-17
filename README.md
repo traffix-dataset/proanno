@@ -10,26 +10,30 @@ This is the implementation of the proAnno labeling tool presented in the paper "
 <!-- TODO : insert image -->
 
 ## Overview
-- [Features](#features)
+<!-- - [Features](#features) -->
 - [Data Download](#data-download)
 - [Quick Start](#quick-start)
+- [Traffix annotation](#traffix-annotation)
 
-## Features
+<!-- ## Features -->
 <!-- TODO -->
 
 ## Data Download
-Download the Traffix dataset from the following [link](TODO). The data should structured in the following format after downloading:
-<!-- ![OVERVIEW](https://github.com/traffix-dataset/proanno/blob/master/assets/textures/input_structure.png) -->
-<!-- TODO : Fill in the correct format -->
-```shell
-├── Traffix
-│   ├── drive_42_west_to_east
-|      |── images
-|      |── point clouds
-│   ├── xxx
-│   ├── xxx
-```
-Move the dataset into the `proanno/input` folder.
+1. Download the Traffix dataset from the following link:
+   - [Train set](https://syncandshare.lrz.de/getlink/fi5DTe865GKpsayKgzyJLP/train)
+   - [Validation set](https://syncandshare.lrz.de/getlink/fiYBV4ZqrXswLLjxcwT3UB/val)
+
+2. The data should then be structured in the following format:
+    ```shell
+    ├── Traffix
+    │   ├── train
+    │   │   ├── images
+    │   │   └── point_clouds
+    │   ├── val
+    │   │   ├── images
+    │   │   └── point_clouds
+    ```
+3. Move the dataset into the `proanno/input` folder (or use soft link.)
 
 
 ## Quick Start
@@ -58,24 +62,24 @@ npm install
 #### 1. Run the `resize_images.py` script to resize the images by half.
 ```shell
 python scripts/resize_images.py\
-    --input_folder_path_drive ./input/Traffix/drive_42_west_to_east
+    --input_folder_path_drive ./input/Traffix/train
 ```
 <!-- TODO check if paths are correct -->
 #### 2. Run the `create_file_name_list.py` script to create a file name list for the images, point clouds and annotations.
 ```shell
 python scripts/create_file_name_list.py\
-    --input_folder_path_drive ./input/Traffix/drive_42_west_to_east
+    --input_folder_path_drive ./input/Traffix/train
 ```
 
 #### 3.  Update the configuration file `config/config.json`
 1.  set the default sequence for annotation, 
     ```
-         "default_sequence": "drive_42_west_to_east",
+         "default_sequence": "train",
     ```
 2. Extend the sequence array with the new sequence that you want to annotate:
    ```
    {
-          "name": "drive_42_west_to_east",
+          "name": "train",
           "num_frames": 100,
           "default_weather_type": "SUNNY"
    }
@@ -124,4 +128,4 @@ It is possible to load HD map for visual support.
 
 ## Traffix annotation
 
-The annotation procedure used for "Traffix - V2X dataset" is described in the paper. Further instructions which were given to the annotators is listed in [this document](./Instructions.md) 
+The annotation procedure used for "Traffix - V2X dataset" is described in the paper. Further instructions which were given to the annotators is listed in this [document](./Instructions.md) 
