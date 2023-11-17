@@ -4,8 +4,11 @@ from utils import *
 
 
 if __name__ == "__main__":
+    arg_parser = ArgumentParser()
+    arg_parser.add_argument("--input_folder_path_drive", type=str, required=True, help="Path to the input folder")
+    args = arg_parser.parse_args()
+    img_dir = os.path.join(args.input_folder_path_drive, 'images')
 
-    img_dir = '/Users/ahmad/Desktop/RCI/Thesis/02_Workspace/proanno/input/Traffix/drive_33_north_to_south/images'
     img_channels = os.listdir(img_dir)
     img_dirs = [i for i in img_channels if 'camera' in i]
     for dir in img_dirs:
